@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "appo_lms"
+version = "0.1.0"
+description = ""
+authors = ["Sadat Issah <51789921+sadatyussuf@users.noreply.github.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+Django = "^4.0.6"
+django-bootstrap-v5 = "^1.0.11"
+djangorestframework-gis = "^1.0"
+psycopg2 = "^2.9.3"
+python-dotenv = "^0.20.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

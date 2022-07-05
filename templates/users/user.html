@@ -1,0 +1,19 @@
+{% extends "layout2.html" %}
+{% load static %}
+{% load bootstrap5 %}
+
+
+    {% block body %}
+
+        <h3>Welcome {{ request.user }} </h3>
+
+        <ul>
+            <li>Username: {{ request.user.username }}</li>
+        </ul>
+
+        <a href="{% url 'users:logout' %}">Logout</a>
+
+    {% endblock %}
+
+
+

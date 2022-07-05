@@ -1,0 +1,74 @@
+{% extends "layout2.html" %}
+{% load static %}
+{% load bootstrap5 %}
+
+<!-- Created by Abdul-Moomin Tahiru, Data Link Institute-->
+
+ 
+{% block body %}
+
+<main id="main">
+
+    <!-- ======= Intro Single ======= -->
+    <section class="intro-single">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-lg-8">
+            <div class="title-single-box">
+              <h4 class="title-single">Welcome to Appolonia Stool Land Management System</h4>
+              <span class="color-text-a">SignUp Zone</span>
+            </div>
+          </div>
+          <div class="col-md-12 col-lg-4">
+            <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                  <a href="{% url 'users:index' %}">Home</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                  Sign Up
+                </li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Intro Single-->
+
+    <div class="container">
+        {% if message %}
+            <div style="color: Red;">{{ message }}</div>
+        {% endif %}
+    
+    <div class="signup-form">
+        <div class="title"><h3 style="color: green; font-weight: 600;">LMS Sign Up</h3></div>
+        <form action="{% url 'users:signup' %}" method="post">  
+            {% csrf_token %}                  
+             <div class="input-boxes">                        
+                {% for field in form %}
+                    <p>
+                    {{ field.label_tag }}<br>
+                    {{ field }}
+                    {% if field.help_text %}
+                        <small style="color: grey;">{{ field.help_text }}</small>
+                    {% endif %}
+                    {% for error in field.errors %}
+                        <p style="color: red;">{{ error }}</p>
+                    {% endfor %}
+                    </p>
+                {% endfor %}
+                <button type="submit">Sign up</button>
+            
+                <div class="text sign-up-text">Already have an account? <a href="{% url 'users:index' %}">Login Now</a></div>
+            </div> 
+        </form>
+        <div class="text">Are you a Visitor? <a href="{% url 'users:property-grid' %}">Click Here to visit Home Page</a></div>
+    </div>
+</div>
+
+  </main><!-- End #main -->
+
+        
+                    
+                    
+{% endblock %}
