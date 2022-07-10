@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'users',
     'bootstrap5',
     'rest_framework_gis',
+    'leaflet'
 ]
 
 MIDDLEWARE = [
@@ -115,6 +116,37 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+
+# Leaflet Configurations
+LEAFLET_CONFIG = {
+
+#you can use your own
+
+"DEFAULT_CENTER" : (40.5, -0.09),
+
+"DEFAULT_ZOOM" : 1,
+
+"MAX_ZOOM" : 20,
+
+"MIN_ZOOM" : 3,
+
+"DEFAULT_PRECISION": 6,
+
+"SCALE" : 'both',
+
+"ATTRIBUTION_PREFIX" : "My Custome Leaflet map"
+
+}
+
+
+
+
+
+
+
+
+
 
 
 # Internationalization
