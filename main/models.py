@@ -1,3 +1,4 @@
+from distutils.command.upload import upload
 from django.contrib.gis.db import models
 from django.core.validators import RegexValidator
 from django.urls import reverse
@@ -17,7 +18,7 @@ class Plot(models.Model):
     phone_number = models.CharField(validators=[phone_regex], max_length=17, blank=True) # Validators should be a list
     # plot = models.PolygonField() #! will remove this later
     geom = models.MultiPolygonField(null=True)
-    # file_upload = models.FileField()
+    file_upload = models.FileField(upload_to='uploads/',null=True)
     class Meta:
         verbose_name = "Plot"
         verbose_name_plural = "Plots"
