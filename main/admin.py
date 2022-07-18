@@ -1,6 +1,6 @@
 # from django.contrib import admin
 # from django.contrib.gis.db import models
-# from django.contrib.gis.admin import OSMGeoAdmin
+from django.contrib.gis.admin import OSMGeoAdmin
 
 from django.contrib.gis import admin
 from leaflet.admin import LeafletGeoAdmin

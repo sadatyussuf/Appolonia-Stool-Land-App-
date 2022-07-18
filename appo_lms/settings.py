@@ -123,9 +123,9 @@ LEAFLET_CONFIG = {
 
 #you can use your own
 
-"DEFAULT_CENTER" : (40.5, -0.09),
+"DEFAULT_CENTER" : (13.3888599 ,52.5170365),
 
-"DEFAULT_ZOOM" : 1,
+"DEFAULT_ZOOM" : 15,
 
 "MAX_ZOOM" : 20,
 
@@ -135,7 +135,7 @@ LEAFLET_CONFIG = {
 
 "SCALE" : 'both',
 
-"ATTRIBUTION_PREFIX" : "My Custome Leaflet map"
+"ATTRIBUTION_PREFIX" : "My Custom Leaflet map"
 
 }
 

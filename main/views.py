@@ -7,6 +7,18 @@ from .models import Plot
 from django.contrib.auth.forms import UserCreationForm
 # from .models import PlotForm
 
+# ****************************
+from django.views import generic
+from django.contrib.gis.geos import fromstr,Point
+from django.core.serializers import serialize
+
+longitude = -80.191788
+latitude = 25.761681
+
+my_location = Point(longitude, latitude, srid=4326) 
+
+
+
 # class PlotForm(forms.ModelForm):
 #     owner = forms.CharField(widget=forms.TextInput(attrs={
 #         "class": "form-control",
