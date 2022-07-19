@@ -17,7 +17,7 @@ class Plot(models.Model):
     phone_regex = RegexValidator(regex=r'^\+?1?\d{9,13}$', message="Phone number must be entered in the format: '+999999999'. Up to 13 digits allowed.")
     phone_number = models.CharField(validators=[phone_regex], max_length=17, blank=True) # Validators should be a list
     # plot = models.PolygonField() #! will remove this later
-    geom = models.MultiPolygonField(null=True)
+    geom = models.MultiPolygonField(null=True,blank=True)
     file_upload = models.FileField(upload_to='uploads/',null=True)
     class Meta:
         verbose_name = "Plot"
