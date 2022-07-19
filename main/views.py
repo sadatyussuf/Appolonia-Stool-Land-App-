@@ -1,49 +1,31 @@
 from cProfile import label
+from multiprocessing import context
 from pickletools import long4
 from django import forms
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .models import Plot
 from django.contrib.auth.forms import UserCreationForm
-# from .models import PlotForm
+from .forms import PlotForm
 
 # ****************************
 from django.views import generic
 from django.contrib.gis.geos import fromstr,Point
 from django.core.serializers import serialize
 
-longitude = -80.191788
-latitude = 25.761681
+# longitude = -80.191788
+# latitude = 25.761681
 
-my_location = Point(longitude, latitude, srid=4326) 
+# my_location = Point(longitude, latitude, srid=4326) 
 
-
-
-# class PlotForm(forms.ModelForm):
-#     owner = forms.CharField(widget=forms.TextInput(attrs={
-#         "class": "form-control",
-#         "placeholder": "name"
-#     }))
-#     address = forms.CharField(widget=forms.TextInput(attrs={
-#         "class": "form-control",
-#         "placeholder": "owner's address"
-#     }))
-    
-#     plot = forms.CharField(widget=forms.TextInput(attrs={
-#         'type': "number",
-#         "class": "form-control",
-#         "placeholder": "Owner's hometown"
-#     }))  
-   
-#     hometown = forms.CharField(widget=forms.TextInput(attrs={
-#         'type': "number",
-#         "class": "form-control",
-#         "placeholder": "plot coordinates"
-#     }))
       
 # # Create your views here.
 def index(request):
-    return render(request, 'templates/users/login.html')
+    form = PlotForm()
+
+    context = {'form': form}
+
+    return render(request, 'templates/main/index.html',context)
 
 
 
