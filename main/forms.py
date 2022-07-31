@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from .models import Plot
 
 class PlotForm(forms.ModelForm):
     owner_name = forms.CharField(widget=forms.TextInput(attrs={
@@ -12,16 +13,10 @@ class PlotForm(forms.ModelForm):
         "placeholder": "owner's address"
     }))
     
-    # plot = forms.CharField(widget=forms.TextInput(attrs={
-    #     'type': "number",
-    #     "class": "form-control",
-    #     "placeholder": "Owner's hometown"
-    # }))  
-   
     hometown = forms.CharField(widget=forms.TextInput(attrs={
-        'type': "number",
+        # 'type': "number",
         "class": "form-control",
-        "placeholder": "plot coordinates"
+        "placeholder": "locality"
     }))
     
     zone = forms.CharField(widget=forms.TextInput(attrs={
@@ -35,12 +30,7 @@ class PlotForm(forms.ModelForm):
     }))
     class Meta:
         model = Plot
-        # fields = [
-        #     'name', 'age','level'
-        # ]
-        fields = [
-            'owner_name', 'address','hometown','zone','phone_number','file_upload'
-        ]
+        fields = ('owner_name', 'address','hometown','zone','phone_number','file_upload',)
 
 
 
