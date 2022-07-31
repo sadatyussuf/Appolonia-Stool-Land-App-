@@ -121,7 +121,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Leaflet Configurations
 LEAFLET_CONFIG = {
 
-#you can use your own
+#you can use your own   5.796733790344598, -0.07945842216120023
 
 "DEFAULT_CENTER" : (13.3888599 ,52.5170365),
 
