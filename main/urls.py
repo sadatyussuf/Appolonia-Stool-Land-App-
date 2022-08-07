@@ -5,5 +5,5 @@ app_name = "main"
 
 urlpatterns = [
     path('', views.index, name="index"),
-    # path('newplot/', views.create_plot, name="newplot")
+    path('new_plot/', views.create_plot, name="new_plot"),
 ]
