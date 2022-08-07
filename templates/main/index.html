@@ -1,17 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>main | post</title>
-</head>
-<body>
-    <h1>Hello, Welcome to The Main Plot page</h1>
+{% extends "./base.html" %}
+{% load static %}
+{% load bootstrap5 %}
+{% block title %}index{% endblock%}
 
-    <form action="." method="post">
-        {% csrf_token %}
-        {{form}}
-    </form>
-</body>
-</html>
+{% block content %}
+
+<h1>Hello, Welcome to The Main Plot page</h1>
+<div>
+    {% for plot in plots %}
+    <p>{{plot.owner_name}}</p>
+    <p>{{plot.address}}</p>
+    <p>{{plot.hometown}}</p>
+    <p>{{plot.zone}}</p>
+    <p>{{plot.phone_number}}</p>
+    {%endfor%}
+</div>
+{% endblock %}
