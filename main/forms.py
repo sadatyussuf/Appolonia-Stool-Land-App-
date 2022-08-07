@@ -31,6 +31,7 @@ class PlotForm(forms.ModelForm):
     class Meta:
         model = Plot
         fields = ('owner_name', 'address','hometown','zone','phone_number','file_upload',)
+        # fields = ('file_upload',)
 
 
 
