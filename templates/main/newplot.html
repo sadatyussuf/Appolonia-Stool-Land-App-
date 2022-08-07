@@ -1,14 +1,18 @@
-<!-- {% extends "users/layout.html" %}
+{% extends "./base.html" %}
 {% load static %}
 {% load bootstrap5 %}
+{% block title %}new_plot{% endblock%}
 
-{% block body %}
 
-<form action="#" method="post">
-    {% csrf_token %}
-    <h2>New Plot details</h2>
-    {{ form }}
-    <input type="submit">
-</form>
+{% block content %}
 
-{% endblock %} -->
+<h2 class=" form-header">New Plot Detail</h2>
+
+    <!-- { url 'blog_create' }  -->
+    
+    <form action="."  method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form> 
+{% endblock %}
