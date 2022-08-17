@@ -9,7 +9,7 @@ from .models import Plot
 
 @admin.register(Plot)
 class PlotAdmin(LeafletGeoAdmin):
-    list_display = ('owner_name', 'zone', 'phone_number')
+    list_display = ('owner_name', 'address','hometown','zone','phone_number','file_upload',)
 
 class PlotAdmin(admin.ModelAdmin):
     pass
